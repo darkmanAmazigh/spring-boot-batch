@@ -1,0 +1,16 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+<!-- <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"> -->
+
+<!-- <!--     Spring Batch Admin Context: Additional context for Spring Batch Admin --> -->
+<!--     <import resource="classpath*:/META-INF/spring/batch/servlet/resources/*.xml" /> -->
+<!--     <import resource="classpath*:/META-INF/spring/batch/servlet/manager/*.xml" /> -->
+<!--     <import resource="classpath*:/META-INF/spring/batch/servlet/override/*.xml" /> -->
+<!--     <import resource="classpath*:/META-INF/spring/batch/bootstrap/**/*.xml" /> -->
+<!--     <import resource="classpath*:/META-INF/spring/batch/override/**/*.xml" /> -->
+
+<!-- <!--     For Spring Batch --> -->
+<!--     <bean id="resourceService" -->
+<!--         class="org.springframework.batch.admin.web.resources.DefaultResourceService"> -->
+<!--         <property name="servletPath" value="/batch" /> -->
+<!--     </bean> -->
+<!-- </beans> -->
