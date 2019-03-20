@@ -1,8 +1,13 @@
 package com.exane.anafi.neuron.security;
 
+import java.nio.file.attribute.GroupPrincipal;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.function.Function;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -12,6 +17,7 @@ import java.util.stream.Stream;
  *
  */
 public class TestStream {
+	
 	public static void main(String[] args) {
 		
 		List<TestPersonne> listP = Arrays.asList(
@@ -84,5 +90,35 @@ public class TestStream {
 							.map(x -> x.getPoids())
 							.collect(Collectors.toList());
 		System.out.println(ld);
+		
+		List<String> listF = Arrays.asList(
+						"apple", 
+						"apple", 
+						"banana",
+		                "apple", 
+		                "orange", 
+		                "banana", 
+		                "papaya"
+                );
+		
+		Stream<String> sf = listF.stream();
+		
+		
+		Map<String, Long> result = sf.collect(
+				Collectors.groupingBy(
+						Function.identity(), Collectors.counting()
+			)
+		);
+		
+		Map<String, List<String>> groupedByName =	listF.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.toList()));
+	
+		System.out.println(groupedByName);
+	
+		System.out.println("\n"+result);
+		result.forEach((k, v) -> {
+	        System.out.printf("%s : %d%n", k, v);
+	    });
+		
+		listP.stream().sorted(Comparator.comparing(TestPersonne::getNom).reversed()).forEach(System.out::println);
 	}
 }
